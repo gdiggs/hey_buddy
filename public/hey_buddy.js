@@ -58,13 +58,15 @@ $(document).ready(function() {
               icon: image
             });
 
+            var info_window = new google.maps.InfoWindow({
+              content: build_instagram_info_window(img),
+              maxWidth: 150
+            });
+
             google.maps.event.addListener(marker, 'click', function() {
               info_window.open(map, marker);
             });
 
-            var info_window = new google.maps.InfoWindow({
-              content: build_instagram_info_window(img)
-            });
           }
         });
       }
